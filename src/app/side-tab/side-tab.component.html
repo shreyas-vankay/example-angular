@@ -1,0 +1,12 @@
+<div class="side-tab-div">
+  <button
+    mat-stroked-button
+    color="primary"
+    *ngFor="let state of states"
+    class="side-tab-button"
+    id="{{ state }}"
+    (click)="clickButton(state)"
+  >
+    <span class="button-text">{{ state }}</span>
+  </button>
+</div>

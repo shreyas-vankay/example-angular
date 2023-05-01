@@ -1,0 +1,22 @@
+.button-text {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    text-transform: uppercase;
+    
+    color: #000000;
+}
+.side-tab-button {
+    height: fit-content;
+    max-width: fit-content;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.side-tab-div {
+    display: flex;
+    flex-direction: column;
+}

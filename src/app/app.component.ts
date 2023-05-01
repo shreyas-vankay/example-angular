@@ -29,8 +29,9 @@ export class AppComponent {
     this.expanded_col = state;
   };
 
-  tabClick = (event: MatTabChangeEvent) => {
-    this.expanded_col = this.states[event.index];
+  tabClick = (event: string) => {
+    this.expanded_col =
+      this.states.find((state) => state == event) || this.expanded_col;
   };
 
   getColSpan = (state: string) => {

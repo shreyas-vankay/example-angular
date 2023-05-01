@@ -8,9 +8,11 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatTabsModule } from '@angular/material/tabs';
 import { ExampleCardComponent } from './example-card/example-card.component';
 import { MatCardModule } from '@angular/material/card';
+import { SideTabComponent } from './side-tab/side-tab.component';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
-  declarations: [AppComponent, ExampleCardComponent],
+  declarations: [AppComponent, ExampleCardComponent, SideTabComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -18,6 +20,7 @@ import { MatCardModule } from '@angular/material/card';
     MatGridListModule,
     MatTabsModule,
     MatCardModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

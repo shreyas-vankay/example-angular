@@ -1,24 +1,21 @@
-<div *ngIf="expanded; else elseBlock">
-  <mat-tab-group
-    (selectedTabChange)="tabClick($event)"
-    [selectedIndex]="states.indexOf(expanded_col)"
-  >
-    <mat-tab *ngFor="let state of states" label="{{ state }}">
-      <mat-grid-list cols="3" gutterSize="10px">
-        <mat-grid-tile [colspan]="3" [rowspan]="1"
-          ><mat-grid-tile-header (click)="myClick(state)">{{
-            state
-          }}</mat-grid-tile-header>
-          <div class="expanded-div">
-            <app-example-card
-              *ngFor="let patient of state_cards.get(state)"
-              patient="{{ patient }}"
-              class="patient-cards"
-            ></app-example-card></div
-        ></mat-grid-tile>
-      </mat-grid-list>
-    </mat-tab>
-  </mat-tab-group>
+<div *ngIf="expanded; else elseBlock" class="expanded-cols-div">
+  <mat-grid-list cols="3" gutterSize="10px">
+    <mat-grid-tile [colspan]="3" [rowspan]="1" class="expanded-tile"
+      ><mat-grid-tile-header (click)="myClick(expanded_col)">{{
+        expanded_col
+      }}</mat-grid-tile-header>
+      <div class="expanded-div">
+        <app-example-card
+          *ngFor="let patient of state_cards.get(expanded_col)"
+          patient="{{ patient }}"
+          class="patient-cards"
+        ></app-example-card></div
+    ></mat-grid-tile>
+  </mat-grid-list>
+  <app-side-tab
+    expanded_col="{{ expanded_col }}"
+    (buttonClicked)="tabClick($event)"
+  ></app-side-tab>
 </div>
 <ng-template #elseBlock>
   <mat-grid-list cols="3" gutterSize="10px">

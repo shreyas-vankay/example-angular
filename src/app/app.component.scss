@@ -1,5 +1,16 @@
+mat-grid-list {
+    max-width: 1000px;
+    position: inherit;
+}
 mat-grid-tile {
     background: gray;
+}
+.expanded-tile {
+    width: 90% !important;
+}
+.expanded-cols-div {
+    display: flex;
+    flex-direction: row-reverse;
 }
 .expanded-div {
     display: flex;
