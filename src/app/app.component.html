@@ -18,19 +18,25 @@
   ></app-side-tab>
 </div>
 <ng-template #elseBlock>
-  <mat-grid-list cols="3" gutterSize="10px">
+  <mat-grid-list cols="3" gutterSize="10px" cdkDropListGroup>
     <mat-grid-tile
-      *ngFor="let state of states"
+      *ngFor="let state of states; let i = index"
       [colspan]="getColSpan(state)"
       [rowspan]="1"
       ><mat-grid-tile-header (click)="myClick(state)">{{
         state
       }}</mat-grid-tile-header>
-      <div>
+      <div
+        cdkDropList
+        [cdkDropListData]="state_cards.get(state)"
+        (cdkDropListDropped)="dropped($event)"
+        class="cdk-drop-list"
+      >
         <app-example-card
           *ngFor="let patient of state_cards.get(state)"
           patient="{{ patient }}"
           class="patient-cards"
+          cdkDrag
         ></app-example-card></div
     ></mat-grid-tile>
   </mat-grid-list>

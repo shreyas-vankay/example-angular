@@ -1,5 +1,12 @@
 import { animate, style, transition, trigger } from '@angular/animations';
-import { Component } from '@angular/core';
+import {
+  CdkDragDrop,
+  CdkDragEnter,
+  CdkDropList,
+  moveItemInArray,
+  transferArrayItem,
+} from '@angular/cdk/drag-drop';
+import { Component, QueryList, ViewChildren } from '@angular/core';
 import { MatTabChangeEvent } from '@angular/material/tabs';
 
 @Component({
@@ -23,6 +30,17 @@ export class AppComponent {
   ]);
   expanded = false;
   expanded_col!: string;
+
+  dropped($event: any) {
+    // console.log($event);
+    // console.log(this.state_cards);
+    transferArrayItem(
+      $event.previousContainer.data,
+      $event.container.data,
+      $event.previousIndex,
+      $event.currentIndex
+    );
+  }
 
   myClick = (state: string) => {
     this.expanded = !this.expanded;

@@ -9,6 +9,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { ExampleCardComponent } from './example-card/example-card.component';
 import { MatCardModule } from '@angular/material/card';
 import { SideTabComponent } from './side-tab/side-tab.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
@@ -21,6 +22,7 @@ import { MatButtonModule } from '@angular/material/button';
     MatTabsModule,
     MatCardModule,
     MatButtonModule,
+    DragDropModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
