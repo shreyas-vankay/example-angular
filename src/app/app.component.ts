@@ -32,8 +32,6 @@ export class AppComponent {
   expanded_col!: string;
 
   dropped($event: any) {
-    // console.log($event);
-    // console.log(this.state_cards);
     transferArrayItem(
       $event.previousContainer.data,
       $event.container.data,

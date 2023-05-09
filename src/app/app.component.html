@@ -23,6 +23,7 @@
       *ngFor="let state of states; let i = index"
       [colspan]="getColSpan(state)"
       [rowspan]="1"
+      class="mat-grid-init"
       ><mat-grid-tile-header (click)="myClick(state)">{{
         state
       }}</mat-grid-tile-header>
